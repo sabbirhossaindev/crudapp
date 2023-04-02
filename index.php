@@ -16,7 +16,7 @@
         <form class="form" action="" method="post" enctype="multipart/form-data">
             <input type="text" name="std_name" class="form-control mb-2" placeholder="Enter Your Name" required>
             <input type="number" name="std_roll" class="form-control mb-2" placeholder="Enter Your Roll" required>
-            <label for="image" class="p-2 text-success">Upload Your Image</label>
+            <label for="image" class="p-2 text-primary">Upload Your Image</label>
             <input type="file" name="std_img" class="form-control mb-2">
             <input type="submit" name="std_info" class="form-control bg-warning">
         </form>
@@ -27,19 +27,23 @@
         <table class="table table-responsive">
             <thead>
                 <tr>
-                    <th scope="col">NO</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Roll</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>Sabbir</td>
+                    <td>477470</td>
                     <td></td>
+                    <td>
+                        <a class="btn btn-success" href="#">Edit</a>
+                        <a class="btn btn-warning" href="#">Delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
