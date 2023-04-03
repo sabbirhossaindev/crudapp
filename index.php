@@ -1,3 +1,8 @@
+<?php
+    include("function.php");
+    $objCrudAdmin = new crudApp();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
