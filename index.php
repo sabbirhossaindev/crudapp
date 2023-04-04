@@ -1,6 +1,11 @@
 <?php
     include("function.php");
     $objCrudAdmin = new crudApp();
+
+    if(isset($_POST['add_info'])){
+        $return_msg = $objCrudAdmin-> add_data($_POST);
+    }
+    $objCrudAdmin->display_data();
 ?>
 
 <!doctype html>
