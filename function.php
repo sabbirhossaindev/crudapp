@@ -29,5 +29,12 @@
                 return "Information Added Successfully";
             }
         }
+        public function display_data(){
+            $query = "SELECT * FROM students";
+            if(mysqli_query($this->conn, $query)){
+                $returnData = mysqli_query($this->conn, $query);
+                return $returnData;
+            }
+        }
     }
 ?>

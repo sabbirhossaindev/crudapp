@@ -5,7 +5,8 @@
     if(isset($_POST['add_info'])){
         $return_msg = $objCrudAdmin-> add_data($_POST);
     }
-    $objCrudAdmin->display_data();
+
+    $students = $objCrudAdmin->display_data();
 ?>
 
 <!doctype html>
@@ -24,6 +25,8 @@
     <div class="container my-4 p-4 shadow">
         <h2><a style="text-decoration: none;" href="index.php">SabbirIt Student Database</a></h2>
         <form class="form" action="" method="post" enctype="multipart/form-data">
+            <?php if (isset($return_msg)) {
+                echo $return_msg;} ?>
             <input type="text" name="std_name" class="form-control mb-2" placeholder="Enter Your Name" required>
             <input type="number" name="std_roll" class="form-control mb-2" placeholder="Enter Your Roll" required>
             <label for="image" class="p-2 text-primary">Upload Your Image</label>
@@ -45,16 +48,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Sabbir</td>
-                    <td>477470</td>
-                    <td></td>
-                    <td>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-warning" href="#">Delete</a>
-                    </td>
-                </tr>
+                <?php while($student=mysqli_fetch_assoc($students)){ ?>
+                    <tr>
+                        <td><?php echo $student['id']; ?></td>
+                        <td><?php echo $student['std_name']; ?></td>
+                        <td><?php echo $student['std_roll']; ?></td>
+                        <td>
+                            <img src="upload/<?php echo $student['std_img']; ?>" alt=""></td>
+                        <td>
+                            <a class="btn btn-success" href="#">Edit</a>
+                            <a class="btn btn-warning" href="#">Delete</a>
+                        </td>
+                    </tr>
+                <?php }?>
             </tbody>
         </table>
     </div>
