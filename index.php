@@ -54,7 +54,7 @@
                         <td><?php echo $student['std_name']; ?></td>
                         <td><?php echo $student['std_roll']; ?></td>
                         <td>
-                            <img src="upload/<?php echo $student['std_img']; ?>" alt=""></td>
+                            <img style="height: 80px;" src="upload/<?php echo $student['std_img']; ?>" alt=""></td>
                         <td>
                             <a class="btn btn-success" href="#">Edit</a>
                             <a class="btn btn-warning" href="#">Delete</a>
