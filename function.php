@@ -28,6 +28,9 @@
                 move_uploaded_file($tmp_name, 'upload/'.$std_img);
                 return "Information Added Successfully";
             }
+            else{
+                "data not insert";
+            }
         }
         public function display_data(){
             $query = "SELECT * FROM students";
